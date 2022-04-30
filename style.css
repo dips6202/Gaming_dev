@@ -26,12 +26,46 @@ body {
     display: none;
 }
 
-.bird{
+.bird {
+    --bird-top: -1000;
     --bird-size: 60px;
     position: absolute;
-    background-color: rgb(0, 255, 179);
+    background-color: rgb(233, 161, 214);
     width: var(--bird-size);
     height: var(--bird-size);
     left: var(--bird-size);
-    border-radius: 60px;
+    top: calc(var(--bird-top) * 1px);
+    border-radius: 60%;
+}
+
+.pipe {
+--pipe-width: 120;
+--pipe-left: 100;
+--hole-top: 500;
+--hole-height: 120;
+ position: absolute;
+ top: 0;
+ bottom: 0;
+ width: calc(var(--pipe-width) * 1px);
+ left: calc(var(--pipe-left) * 1px);
+}
+
+
+.pipe > .segment{
+    position: absolute;
+    width: 100%;
+    background-color: rgb(83, 6, 61);
+}
+
+
+.pipe > .top {
+    top: 0;
+    bottom: calc(var(--hole-top) * 1px);
+    
+}
+
+.pipe > .bottom {
+    bottom: 0;
+    top: calc(100vh - (var(--hole-top) * 1px) + calc(var(--hole-height) * 1px));
+    
 }
